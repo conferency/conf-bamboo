@@ -108,6 +108,248 @@ models: () => [
         "exact": true
       },
       {
+        "path": "/profile",
+        "name": "profile",
+        "icon": "profile",
+        "routes": [
+          {
+            "path": "/profile/basic",
+            "name": "basic",
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Profile__BasicProfile" */'../Profile/BasicProfile'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/profile/basic/:id",
+            "name": "basic",
+            "hideInMenu": true,
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Profile__BasicProfile" */'../Profile/BasicProfile'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/profile/advanced",
+            "name": "advanced",
+            "authority": [
+              "admin"
+            ],
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Profile__AdvancedProfile" */'../Profile/AdvancedProfile'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "name": "exception",
+        "icon": "warning",
+        "path": "/exception",
+        "routes": [
+          {
+            "path": "/exception/403",
+            "name": "not-permission",
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Exception__403" */'../Exception/403'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/exception/404",
+            "name": "not-find",
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Exception__404" */'../Exception/404'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/exception/500",
+            "name": "server-error",
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Exception__500" */'../Exception/500'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/exception/trigger",
+            "name": "trigger",
+            "hideInMenu": true,
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Exception__TriggerException" */'../Exception/TriggerException'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "name": "account",
+        "icon": "user",
+        "path": "/account",
+        "routes": [
+          {
+            "path": "/account/center",
+            "name": "center",
+            "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Center'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "routes": [
+              {
+                "path": "/account/center",
+                "redirect": "/account/center/articles",
+                "exact": true
+              },
+              {
+                "path": "/account/center/articles",
+                "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Articles'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/center/applications",
+                "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Applications'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/center/projects",
+                "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Projects'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+              }
+            ]
+          },
+          {
+            "path": "/account/settings",
+            "name": "settings",
+            "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/Info'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+            "routes": [
+              {
+                "path": "/account/settings",
+                "redirect": "/account/settings/base",
+                "exact": true
+              },
+              {
+                "path": "/account/settings/base",
+                "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/BaseView'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/settings/security",
+                "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/SecurityView'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/settings/binding",
+                "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/BindingView'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/settings/notification",
+                "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Users/harrywang/sandbox/conf-bamboo/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/NotificationView'),
+  LoadingComponent: require('/Users/harrywang/sandbox/conf-bamboo/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+              }
+            ]
+          },
+          {
+            "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
         "component": () => React.createElement(require('/Users/harrywang/sandbox/conf-bamboo/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
       }
     ]
